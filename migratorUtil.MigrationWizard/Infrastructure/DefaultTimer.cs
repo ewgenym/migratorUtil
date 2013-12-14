@@ -1,7 +1,7 @@
 ﻿using System;
-using migratorUtils.VSPackage.Models;
+using migratorUtil.MigrationWizard.Models;
 
-namespace migratorUtils.VSPackage.Infrastructure
+namespace migratorUtil.MigrationWizard.Infrastructure
 {
     public sealed class DefaultTimer : ITimer
     {

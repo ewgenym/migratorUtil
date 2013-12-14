@@ -11,10 +11,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Microsoft.VisualStudio.PlatformUI;
 
-namespace migratorUtils.VSPackage.Views
+namespace migratorUtil.MigrationWizard.Views
 {
+    /// <summary>
+    /// Interaction logic for AddMigrationWindow.xaml
+    /// </summary>
     public partial class AddMigrationWindow : Window
     {
         public AddMigrationWindow()

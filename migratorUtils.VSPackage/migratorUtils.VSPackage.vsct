@@ -44,11 +44,7 @@
       <Group guid="guidmigratorUtils_VSPackageCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
       </Group>
-
-      <Group guid="guidmigratorUtils_VSPackageCmdSet" id="AddMigrationGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE"/>
-      </Group>
-
+      
     </Groups>
     
     <!--Buttons section. -->
@@ -68,14 +64,6 @@
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
           <ButtonText>My Command name</ButtonText>
-        </Strings>
-      </Button>
-
-      <Button guid="guidmigratorUtils_VSPackageCmdSet" id="cmdidAddMigrationCommand" priority="0x0100" type="Button">
-        <Parent guid="guidmigratorUtils_VSPackageCmdSet" id="AddMigrationGroup" />
-        <Icon guid="guidImages" id="bmpPic1" />
-        <Strings>
-          <ButtonText>Migration...</ButtonText>
         </Strings>
       </Button>
 
@@ -106,9 +94,7 @@
     <GuidSymbol name="guidmigratorUtils_VSPackageCmdSet" value="{9689446f-502a-4e7e-bde9-d75ce0a8f46d}">
 
       <IDSymbol name="MyMenuGroup" value="0x1020" />
-      <IDSymbol name="AddMigrationGroup" value="0x1030" />
       <IDSymbol name="cmdidMyCommand" value="0x0100" />
-      <IDSymbol name="cmdidAddMigrationCommand" value="0x0101" />
     </GuidSymbol>
     
     

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace migratorUtils.VSPackage.ViewModels
+namespace migratorUtil.MigrationWizard.ViewModels
 {
     public class ViewModel : INotifyPropertyChanged
     {

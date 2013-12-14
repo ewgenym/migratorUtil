@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 using System.ComponentModel.Design;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Shell;
-using migratorUtils.VSPackage.Views;
 
 namespace migratorUtils.VSPackage
 {
@@ -65,18 +64,7 @@ namespace migratorUtils.VSPackage
                 CommandID menuCommandID = new CommandID(GuidList.guidmigratorUtils_VSPackageCmdSet, (int)PkgCmdIDList.cmdidMyCommand);
                 MenuCommand menuItem = new MenuCommand(MenuItemCallback, menuCommandID );
                 mcs.AddCommand( menuItem );
-
-                // Create the command for the Add Migration menu item.
-                CommandID migrationCommandID = new CommandID(GuidList.guidmigratorUtils_VSPackageCmdSet, (int)PkgCmdIDList.cmdidAddMigrationCommand);
-                MenuCommand migrationMenuItem = new MenuCommand(AddMigrationCallback, migrationCommandID);
-                mcs.AddCommand(migrationMenuItem);
             }
-        }
-
-        private void AddMigrationCallback(object sender, EventArgs e)
-        {
-            var window = new AddMigrationWindow();
-            window.ShowDialog();
         }
 
         #endregion

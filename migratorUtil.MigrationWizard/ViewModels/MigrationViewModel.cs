@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
-using migratorUtils.VSPackage.Models;
+using migratorUtil.MigrationWizard.Models;
 
-namespace migratorUtils.VSPackage.ViewModels
+namespace migratorUtil.MigrationWizard.ViewModels
 {
     public class MigrationViewModel : ViewModel
     {

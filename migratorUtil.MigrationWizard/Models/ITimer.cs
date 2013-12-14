@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace migratorUtils.VSPackage.Models
+namespace migratorUtil.MigrationWizard.Models
 {
     public interface ITimer
     {

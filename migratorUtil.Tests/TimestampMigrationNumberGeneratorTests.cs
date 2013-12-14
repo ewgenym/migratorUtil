@@ -2,7 +2,7 @@
 using FluentAssertions;
 using NSubstitute;
 using Xunit;
-using migratorUtils.VSPackage.Models;
+using migratorUtil.MigrationWizard.Models;
 
 namespace migratorUtil.Tests
 {

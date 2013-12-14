@@ -122,10 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Guids.cs" />
-    <Compile Include="Infrastructure\DefaultTimer.cs" />
-    <Compile Include="Models\IMigrationNumberGenerator.cs" />
-    <Compile Include="Models\ITimer.cs" />
-    <Compile Include="Models\TimestampMigrationNumberGenerator.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,15 +131,6 @@
     <Compile Include="migratorUtils.VSPackagePackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PkgCmdID.cs" />
-    <Compile Include="ViewModels\DelegateCommand.cs" />
-    <Compile Include="ViewModels\MigrationViewModel.cs" />
-    <Compile Include="ViewModels\ViewModel.cs" />
-    <Compile Include="Views\AddMigration.xaml.cs">
-      <DependentUpon>AddMigration.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AddMigrationWindow.xaml.cs">
-      <DependentUpon>AddMigrationWindow.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
@@ -176,16 +163,6 @@
     <Content Include="Resources\Package.ico" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Page Include="Views\AddMigration.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AddMigrationWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>

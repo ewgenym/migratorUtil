@@ -1,9 +1,0 @@
-﻿<Window
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.11.0"
-        xmlns:local="clr-namespace:migratorUtils.VSPackage.Views" 
-        x:Class="migratorUtils.VSPackage.Views.AddMigrationWindow"
-        Title="Add Migration" Height="130" Width="380" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <local:AddMigration/>
-</Window>

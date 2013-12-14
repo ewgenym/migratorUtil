@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="migratorUtils.VSPackage.Views.AddMigration"
+﻿<UserControl x:Class="migratorUtil.MigrationWizard.Views.AddMigrationControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="90">
+             d:DesignHeight="90" d:DesignWidth="350">
     <UserControl.InputBindings>
         <KeyBinding Key="Enter" Command="{Binding AddMigrationCommand}"></KeyBinding>
     </UserControl.InputBindings>

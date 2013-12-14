@@ -1,15 +1,15 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using migratorUtils.VSPackage.Infrastructure;
-using migratorUtils.VSPackage.Models;
-using migratorUtils.VSPackage.ViewModels;
+using migratorUtil.MigrationWizard.Infrastructure;
+using migratorUtil.MigrationWizard.Models;
+using migratorUtil.MigrationWizard.ViewModels;
 
-namespace migratorUtils.VSPackage.Views
+namespace migratorUtil.MigrationWizard.Views
 {
-    public partial class AddMigration : UserControl
+    public partial class AddMigrationControl : UserControl
     {
-        public AddMigration()
+        public AddMigrationControl()
         {
             InitializeComponent();
 
