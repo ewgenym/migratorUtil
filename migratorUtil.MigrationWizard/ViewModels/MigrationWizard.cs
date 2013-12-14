@@ -16,6 +16,7 @@ namespace migratorUtil.MigrationWizard.ViewModels
 
             if (_dialogResult)
             {
+                //TODO: the name of the file still "Class123.cs" as it is specified in Add->New Item->Migration dialog. Make the file name equal to migration name.
                 replacementsDictionary.Add("$migname$", window.ViewModel.MigrationName);
                 replacementsDictionary.Add("$mignumber$", window.ViewModel.MigrationNumber);
             }

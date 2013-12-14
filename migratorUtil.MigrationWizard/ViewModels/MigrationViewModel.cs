@@ -51,8 +51,19 @@ namespace migratorUtil.MigrationWizard.ViewModels
             get { return new DelegateCommand(AddMigration); }
         }
 
+        public ICommand CancelMigrationCommand
+        {
+            get { return new DelegateCommand(CancelMigration); }
+        }
+
         private void AddMigration()
         {
+            OnRequestClose(true);
+        }
+
+        private void CancelMigration()
+        {
+            OnRequestClose(false);
         }
     }
 }

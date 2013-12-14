@@ -1,8 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace migratorUtil.MigrationWizard.ViewModels
 {
-    public class ViewModel : INotifyPropertyChanged
+    public class ViewModel : INotifyPropertyChanged, IRequestCloseViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -14,5 +15,16 @@ namespace migratorUtil.MigrationWizard.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        protected void OnRequestClose(bool? dialogResult)
+        {
+            var requestClose = RequestClose;
+            if (requestClose != null)
+            {
+                requestClose(this, new RequestCloseEventArgs(dialogResult));
+            }
+        }
+
+        public event EventHandler<RequestCloseEventArgs> RequestClose;
     }
 }

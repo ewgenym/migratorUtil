@@ -75,6 +75,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ViewModels\DelegateCommand.cs" />
+    <Compile Include="ViewModels\IRequestCloseViewModel.cs" />
     <Compile Include="ViewModels\MigrationViewModel.cs" />
     <Compile Include="ViewModels\MigrationWizard.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />

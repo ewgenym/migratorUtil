@@ -8,9 +8,6 @@
     <UserControl.InputBindings>
         <KeyBinding Key="Enter" Command="{Binding AddMigrationCommand}"></KeyBinding>
     </UserControl.InputBindings>
-    <UserControl.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Close" Executed="CloseCommandHandler" />
-    </UserControl.CommandBindings>
     <Grid Margin="3,3,3,3">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -23,7 +20,7 @@
         </DockPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Height="25">
             <Button Command="{Binding AddMigrationCommand}" Width="80" Content="Ok" Margin="0,0,3,0"/>
-            <Button Command="ApplicationCommands.Close" Width="80" Content="Cancel" Margin="3,0,0,0"/>
+            <Button Command="{Binding CancelMigrationCommand}" Width="80" Content="Cancel" Margin="3,0,0,0"/>
         </StackPanel>
     </Grid>
 </UserControl>
