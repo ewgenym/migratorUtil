@@ -3,8 +3,8 @@ using Migrator.Framework;
 
 namespace $rootnamespace$
 {
-    [Migration($rootnumber$)]
-    public class $safeitemrootname$ : Migration
+    [Migration($mignumber$)]
+    public class $migname$ : Migration
     {
         public override void Up()
         {

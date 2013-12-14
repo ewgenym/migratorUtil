@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Text.RegularExpressions;
+using System.Windows.Input;
 using migratorUtil.MigrationWizard.Models;
 
 namespace migratorUtil.MigrationWizard.ViewModels
@@ -32,6 +33,16 @@ namespace migratorUtil.MigrationWizard.ViewModels
 
                 _migrationName = value;
                 OnPropertyChanged("MigrationName");
+            }
+        }
+
+        public string MigrationNumber
+        {
+            get
+            {
+                var regex = new Regex(@"^M(?<number>\d+)", RegexOptions.Singleline);
+                var match = regex.Match(MigrationName);
+                return match.Groups["number"].Value;
             }
         }
 

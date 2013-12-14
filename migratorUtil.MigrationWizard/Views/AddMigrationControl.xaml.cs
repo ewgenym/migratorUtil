@@ -20,6 +20,7 @@ namespace migratorUtil.MigrationWizard.Views
 
         private void CloseCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
+            Window.GetWindow(this).DialogResult = true;
             Window.GetWindow(this).Close();
         }
     }

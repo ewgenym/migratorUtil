@@ -7,17 +7,23 @@ namespace migratorUtil.MigrationWizard.ViewModels
 {
     public class MigrationWizard : IWizard
     {
+        private bool _dialogResult;
+
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             var window = new AddMigrationWindow();
-            window.ShowDialog();
+            _dialogResult = window.ShowDialog() ?? false;
 
-            replacementsDictionary.Add("$rootnumber$", "123");
+            if (_dialogResult)
+            {
+                replacementsDictionary.Add("$migname$", window.ViewModel.MigrationName);
+                replacementsDictionary.Add("$mignumber$", window.ViewModel.MigrationNumber);
+            }
         }
 
         public bool ShouldAddProjectItem(string filePath)
         {
-            return true;
+            return _dialogResult;
         }
 
         public void RunFinished()
