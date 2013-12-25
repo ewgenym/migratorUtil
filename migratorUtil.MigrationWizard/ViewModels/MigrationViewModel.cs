@@ -9,16 +9,16 @@ namespace migratorUtil.MigrationWizard.ViewModels
         private string _migrationName;
         private readonly IMigrationNumberGenerator _migrationNumberGenerator;
 
-        public MigrationViewModel(IMigrationNumberGenerator migrationNumberGenerator)
+        public MigrationViewModel(IMigrationNumberGenerator migrationNumberGenerator, string name)
         {
             _migrationNumberGenerator = migrationNumberGenerator;
-            GenerateNumber();
+            GenerateNumber(name);
         }
 
-        private void GenerateNumber()
+        private void GenerateNumber(string name)
         {
             var number = _migrationNumberGenerator.Generate();
-            _migrationName = string.Format("M{0}_", number);
+            _migrationName = string.Format("M{0}_{1}", number, name);
         }
 
         public string MigrationName

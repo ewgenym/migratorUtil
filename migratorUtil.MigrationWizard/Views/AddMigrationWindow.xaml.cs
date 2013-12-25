@@ -7,7 +7,7 @@ namespace migratorUtil.MigrationWizard.Views
 {
     public partial class AddMigrationWindow : Window
     {
-        public AddMigrationWindow()
+        public AddMigrationWindow(string migrationName)
         {
             DataContextChanged += addMigrationControl_DataContextChanged;
 
@@ -15,7 +15,7 @@ namespace migratorUtil.MigrationWizard.Views
 
             var timer = new DefaultTimer();
             var generator = new TimestampMigrationNumberGenerator(timer);
-            DataContext = new MigrationViewModel(generator);
+            DataContext = new MigrationViewModel(generator, migrationName);
         }
 
         void addMigrationControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)

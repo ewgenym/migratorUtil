@@ -11,15 +11,19 @@ namespace migratorUtil.MigrationWizard.ViewModels
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
-            var window = new AddMigrationWindow();
+            string name;
+            replacementsDictionary.TryGetValue("$safeitemname$", out name);
+
+            var window = new AddMigrationWindow(name);
             _dialogResult = window.ShowDialog() ?? false;
 
-            if (_dialogResult)
+            if (!_dialogResult)
             {
-                //TODO: the name of the file still "Class123.cs" as it is specified in Add->New Item->Migration dialog. Make the file name equal to migration name.
-                replacementsDictionary.Add("$migname$", window.ViewModel.MigrationName);
-                replacementsDictionary.Add("$mignumber$", window.ViewModel.MigrationNumber);
+                return;
             }
+
+            replacementsDictionary.Add("$migname$", window.ViewModel.MigrationName);
+            replacementsDictionary.Add("$mignumber$", window.ViewModel.MigrationNumber);
         }
 
         public bool ShouldAddProjectItem(string filePath)

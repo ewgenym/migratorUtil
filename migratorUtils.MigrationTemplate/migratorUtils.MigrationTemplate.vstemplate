@@ -16,7 +16,7 @@
         <Assembly>System</Assembly>
       </Reference>
     </References>
-    <ProjectItem ReplaceParameters="true">Class.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$migname$.cs">Migration.cs</ProjectItem>
   </TemplateContent>
   <WizardExtension>
     <Assembly>

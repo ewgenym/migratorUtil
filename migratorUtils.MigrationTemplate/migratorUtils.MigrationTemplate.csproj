@@ -58,7 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Class.cs" />
+    <None Include="Migration.cs" />
     <None Include="migratorUtils.MigrationTemplate.ico" />
   </ItemGroup>
   <ItemGroup>
