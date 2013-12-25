@@ -2,9 +2,9 @@
 using FluentAssertions;
 using NSubstitute;
 using Xunit;
-using migratorUtil.MigrationWizard.Models;
+using migratorUtils.MigrationWizard.Models;
 
-namespace migratorUtil.Tests
+namespace migratorUtils.Tests
 {
     public class TimestampMigrationNumberGeneratorTests
     {

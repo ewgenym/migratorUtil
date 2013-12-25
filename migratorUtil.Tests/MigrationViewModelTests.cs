@@ -1,10 +1,10 @@
 ﻿using FluentAssertions;
 using NSubstitute;
 using Xunit;
-using migratorUtil.MigrationWizard.Models;
-using migratorUtil.MigrationWizard.ViewModels;
+using migratorUtils.MigrationWizard.Models;
+using migratorUtils.MigrationWizard.ViewModels;
 
-namespace migratorUtil.Tests
+namespace migratorUtils.Tests
 {
     public class MigrationViewModelTests
     {

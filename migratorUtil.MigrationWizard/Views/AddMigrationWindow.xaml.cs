@@ -1,9 +1,9 @@
 ﻿using System.Windows;
-using migratorUtil.MigrationWizard.Infrastructure;
-using migratorUtil.MigrationWizard.Models;
-using migratorUtil.MigrationWizard.ViewModels;
+using migratorUtils.MigrationWizard.Infrastructure;
+using migratorUtils.MigrationWizard.Models;
+using migratorUtils.MigrationWizard.ViewModels;
 
-namespace migratorUtil.MigrationWizard.Views
+namespace migratorUtils.MigrationWizard.Views
 {
     public partial class AddMigrationWindow : Window
     {

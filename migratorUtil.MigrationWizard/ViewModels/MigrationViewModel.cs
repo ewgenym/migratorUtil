@@ -1,8 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows.Input;
-using migratorUtil.MigrationWizard.Models;
+using migratorUtils.MigrationWizard.Models;
 
-namespace migratorUtil.MigrationWizard.ViewModels
+namespace migratorUtils.MigrationWizard.ViewModels
 {
     public class MigrationViewModel : ViewModel
     {

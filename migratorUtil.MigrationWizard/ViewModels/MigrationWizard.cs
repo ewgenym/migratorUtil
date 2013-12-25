@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using EnvDTE;
 using Microsoft.VisualStudio.TemplateWizard;
-using migratorUtil.MigrationWizard.Views;
+using migratorUtils.MigrationWizard.Views;
 
-namespace migratorUtil.MigrationWizard.ViewModels
+namespace migratorUtils.MigrationWizard.ViewModels
 {
     public class MigrationWizard : IWizard
     {

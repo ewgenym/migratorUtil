@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migratorUtil.Tests", "migratorUtil.Tests\migratorUtil.Tests.csproj", "{D21E71B6-BB8F-4BFB-8419-23AC17F2613D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migratorUtils.Tests", "migratorUtil.Tests\migratorUtils.Tests.csproj", "{D21E71B6-BB8F-4BFB-8419-23AC17F2613D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migratorUtils.VSPackage", "migratorUtils.VSPackage\migratorUtils.VSPackage.csproj", "{4E33AB32-BEA2-4B3E-A637-1A209C3BC83C}"
 EndProject
@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migratorUtils.MigrationTemp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migratorUtils.MigrationVSIX", "migratorUtils.MigrationVSIX\migratorUtils.MigrationVSIX.csproj", "{AE9E3EE5-219D-4896-9D64-60DF3DFA59A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migratorUtil.MigrationWizard", "migratorUtil.MigrationWizard\migratorUtil.MigrationWizard.csproj", "{8BE449BC-C9DF-4D86-B813-469C4794951D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migratorUtils.MigrationWizard", "migratorUtil.MigrationWizard\migratorUtils.MigrationWizard.csproj", "{8BE449BC-C9DF-4D86-B813-469C4794951D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migratorUtils.Console", "migratorUtils.Console\migratorUtils.Console.csproj", "{F7466AC7-71F8-4B72-B0DE-DE2ADBF2F2CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{8BE449BC-C9DF-4D86-B813-469C4794951D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BE449BC-C9DF-4D86-B813-469C4794951D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BE449BC-C9DF-4D86-B813-469C4794951D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7466AC7-71F8-4B72-B0DE-DE2ADBF2F2CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7466AC7-71F8-4B72-B0DE-DE2ADBF2F2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7466AC7-71F8-4B72-B0DE-DE2ADBF2F2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7466AC7-71F8-4B72-B0DE-DE2ADBF2F2CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

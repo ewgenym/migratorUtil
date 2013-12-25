@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace migratorUtil.MigrationWizard.ViewModels
+namespace migratorUtils.MigrationWizard.ViewModels
 {
     public interface IRequestCloseViewModel
     {

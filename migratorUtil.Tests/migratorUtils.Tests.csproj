@@ -7,8 +7,8 @@
     <ProjectGuid>{D21E71B6-BB8F-4BFB-8419-23AC17F2613D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>migratorUtil.Tests</RootNamespace>
-    <AssemblyName>migratorUtil.Tests</AssemblyName>
+    <RootNamespace>migratorUtils.Tests</RootNamespace>
+    <AssemblyName>migratorUtils.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\migratorUtil.MigrationWizard\migratorUtil.MigrationWizard.csproj">
+    <ProjectReference Include="..\migratorUtil.MigrationWizard\migratorUtils.MigrationWizard.csproj">
       <Project>{8BE449BC-C9DF-4D86-B813-469C4794951D}</Project>
-      <Name>migratorUtil.MigrationWizard</Name>
+      <Name>migratorUtils.MigrationWizard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

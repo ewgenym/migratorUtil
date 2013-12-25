@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace migratorUtil.MigrationWizard.ViewModels
+namespace migratorUtils.MigrationWizard.ViewModels
 {
     public class ViewModel : INotifyPropertyChanged, IRequestCloseViewModel
     {

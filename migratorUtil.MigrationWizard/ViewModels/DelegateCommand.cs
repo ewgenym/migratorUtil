@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace migratorUtil.MigrationWizard.ViewModels
+namespace migratorUtils.MigrationWizard.ViewModels
 {
     public class DelegateCommand : ICommand
     {

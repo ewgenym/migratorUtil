@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace migratorUtil.MigrationWizard.Views
+namespace migratorUtils.MigrationWizard.Views
 {
     public partial class AddMigrationControl : UserControl
     {

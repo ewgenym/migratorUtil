@@ -20,8 +20,8 @@
   </TemplateContent>
   <WizardExtension>
     <Assembly>
-      migratorUtil.MigrationWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd65faa6ceb59b39
+      migratorUtils.MigrationWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd65faa6ceb59b39
     </Assembly>
-    <FullClassName>migratorUtil.MigrationWizard.ViewModels.MigrationWizard</FullClassName>
+    <FullClassName>migratorUtils.MigrationWizard.ViewModels.MigrationWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

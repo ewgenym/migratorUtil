@@ -1,4 +1,4 @@
-﻿namespace migratorUtil.MigrationWizard.Models
+﻿namespace migratorUtils.MigrationWizard.Models
 {
     public interface IMigrationNumberGenerator
     {
