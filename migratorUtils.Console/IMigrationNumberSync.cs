@@ -6,9 +6,9 @@ namespace migratorUtils.Console
     public interface IMigrationNumberSync
     {
         [OperationContract(IsOneWay = true)]
-        void Occupy(string number);
+        void Occupy(string projectId, string number);
 
         [OperationContract(IsOneWay = true)]
-        void Release(string number);
+        void Release(string projectId, string number);
     }
 }
