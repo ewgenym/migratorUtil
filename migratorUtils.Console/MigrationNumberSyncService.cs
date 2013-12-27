@@ -7,12 +7,12 @@ namespace migratorUtils.Console
     {
         public void Occupy(string projectId, string number)
         {
-            System.Console.WriteLine("Occupy migration: {0}, project {1}", number, projectId);
+            System.Console.WriteLine("Received: occupy migration: {0}, project {1}", number, projectId);
         }
 
         public void Release(string projectId, string number)
         {
-            System.Console.WriteLine("Release migration: {0}, project {1}", number, projectId);
+            System.Console.WriteLine("Received: release migration: {0}, project {1}", number, projectId);
         }
     }
 }

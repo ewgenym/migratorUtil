@@ -1,57 +1,67 @@
-﻿using System.Net.PeerToPeer;
+﻿using System;
+using System.Net;
+using System.ServiceModel;
+using System.ServiceModel.PeerResolvers;
 
 namespace migratorUtils.Console
 {
     public class MigrationNumberSyncPeer
     {
-        private readonly string _id;
-        private PeerNameRegistration _peerNameRegistration;
-        private readonly MigrationNumberSyncHost _host;
+        private const bool _remoteOnlyMessages = false;
+        public IMigrationNumberSync Channel { get; private set; }
 
-        public MigrationNumberSyncPeer(string id)
+        public void Start(int port)
         {
-            _id = id;
-            _host = new MigrationNumberSyncHost();
+            var url = ServiceUrl();
+
+            var context = new InstanceContext(new MigrationNumberSyncService());
+            var binding = new NetPeerTcpBinding();
+            binding.Security.Mode = SecurityMode.None;
+            binding.Resolver.Mode = PeerResolverMode.Pnrp;
+            binding.Port = port;
+            binding.Name = url + "@" + port;
+
+            var address = new EndpointAddress(url);
+            var channelFactory = new DuplexChannelFactory<IMigrationNumberSync>(context, binding, address);
+
+            var proxy = channelFactory.CreateChannel();
+
+            if (_remoteOnlyMessages)
+            {
+                SetupRemoteOnlyPropogationFilter(((IClientChannel)proxy));
+            }
+
+            ((IClientChannel)proxy).Open();
+
+            Channel = proxy;
         }
 
-        //public IMigrationNumberSync Channel { get; private set; }
-
-        public void Start()
+        private static void SetupRemoteOnlyPropogationFilter(IClientChannel channel)
         {
-            RegisterPnrpNode();
-            _host.Start();
+            var remoteOnlyFilter = new RemoteOnlyMessagePropagationFilter();
+            var peerNode = channel.GetProperty<PeerNode>();
+            peerNode.MessagePropagationFilter = remoteOnlyFilter;
         }
 
         public void Stop()
         {
-            _host.Stop();
-            UnregisterPnrpNode();
-        }
-
-        private void RegisterPnrpNode()
-        {
-            var peerName = new PeerName(_id, PeerNameType.Unsecured);
-
-            _peerNameRegistration = new PeerNameRegistration(peerName, 4321)
-                {
-                    Comment = "Migration number sync",
-                    UseAutoEndPointSelection = true
-                };
-            _peerNameRegistration.Start();
-
-            System.Console.WriteLine("Registration of peer '{0}' completed.", peerName);
-        }
-
-        private void UnregisterPnrpNode()
-        {
-            if (_peerNameRegistration != null)
+            if (Channel != null)
             {
-                var peerName = _peerNameRegistration.PeerName;
-                _peerNameRegistration.Stop();
-                _peerNameRegistration = null;
-
-                System.Console.WriteLine("Registration of peer '{0}' stoped.", peerName);
+                ((IClientChannel)Channel).Close();
             }
+        }
+
+        private string ServiceUrl()
+        {
+            foreach (var address in Dns.GetHostAddresses(Dns.GetHostName()))
+            {
+                if (address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    return string.Format("net.p2p://{0}/MigrationNumberSync", address);
+                }
+            }
+
+            throw new Exception("Unable to determine WCF endpoint.");
         }
     }
 }

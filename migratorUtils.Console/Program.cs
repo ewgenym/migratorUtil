@@ -19,21 +19,22 @@ namespace migratorUtils.Console
         [Action]
         public static void Occupy([Required]string projectId, [Required]string number)
         {
-            System.Console.WriteLine("Occupy command");
+            _peer.Channel.Occupy(projectId, number);
+            System.Console.WriteLine("Occupy command compledted");
         }
 
         [Action]
         public static void Release([Required] string projectId, [Required] string number)
         {
-            System.Console.WriteLine("Release command");
+            _peer.Channel.Release(projectId, number);
+            System.Console.WriteLine("Release command compledted");
         }
 
         [Action]
-        public static void Start()
+        public static void Start([Required]int port)
         {
-            var id = string.Format("{0}_{1}", Environment.MachineName, Guid.NewGuid());
-            _peer = new MigrationNumberSyncPeer(id);
-            _peer.Start();
+            _peer = new MigrationNumberSyncPeer();
+            _peer.Start(port);
         }
 
         [Action]

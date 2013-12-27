@@ -2,7 +2,7 @@
 
 namespace migratorUtils.Console
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://scalepoint.com/peerchannel", CallbackContract = typeof(IMigrationNumberSync))]
     public interface IMigrationNumberSync
     {
         [OperationContract(IsOneWay = true)]
