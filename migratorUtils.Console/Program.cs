@@ -19,14 +19,14 @@ namespace migratorUtils.Console
         [Action]
         public static void Occupy([Required]string projectId, [Required]string number)
         {
-            _peer.Channel.Occupy(projectId, number);
+            _peer.Channel.Occupy(new Migration {ProjectId = projectId, Number = number});
             System.Console.WriteLine("Occupy command compledted");
         }
 
         [Action]
         public static void Release([Required] string projectId, [Required] string number)
         {
-            _peer.Channel.Release(projectId, number);
+            _peer.Channel.Release(new Migration { ProjectId = projectId, Number = number });
             System.Console.WriteLine("Release command compledted");
         }
 
@@ -35,6 +35,12 @@ namespace migratorUtils.Console
         {
             _peer = new MigrationNumberSyncPeer();
             _peer.Start(port);
+        }
+
+        [Action]
+        public static void Join()
+        {
+            _peer.Channel.Join(new JoinRequest{HopCount = 1});
         }
 
         [Action]

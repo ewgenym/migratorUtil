@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="MigrationViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyncMigrationNumberGeneratorTests.cs" />
     <Compile Include="TimestampMigrationNumberGeneratorTests.cs" />
   </ItemGroup>
   <ItemGroup>

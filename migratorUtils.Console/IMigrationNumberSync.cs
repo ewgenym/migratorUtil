@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System.Collections.Generic;
+using System.ServiceModel;
 
 namespace migratorUtils.Console
 {
@@ -6,9 +7,32 @@ namespace migratorUtils.Console
     public interface IMigrationNumberSync
     {
         [OperationContract(IsOneWay = true)]
-        void Occupy(string projectId, string number);
+        void Occupy(Migration migration);
 
         [OperationContract(IsOneWay = true)]
-        void Release(string projectId, string number);
+        void Release(Migration migration);
+
+        [OperationContract(IsOneWay = true)]
+        void Sync(List<Migration> migrations);
+
+        [OperationContract(IsOneWay = true)]
+        void Join(JoinRequest request);
+    }
+
+    [MessageContract]
+    public class JoinRequest
+    {
+        [PeerHopCount]
+        public int HopCount;
+    }
+
+    [MessageContract]
+    public class Migration
+    {
+        [MessageBodyMember]
+        public string ProjectId;
+
+        [MessageBodyMember]
+        public string Number;
     }
 }
