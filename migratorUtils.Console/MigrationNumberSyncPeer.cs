@@ -2,11 +2,19 @@
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.PeerResolvers;
+using migratorUtils.Console.Infrastructure;
 
 namespace migratorUtils.Console
 {
     public class MigrationNumberSyncPeer
     {
+        private readonly IMigrationNumberSync _migrationNumberSync;
+
+        public MigrationNumberSyncPeer(IMigrationNumberSync migrationNumberSync)
+        {
+            _migrationNumberSync = migrationNumberSync;
+        }
+
         private const bool _remoteOnlyMessages = false;
         public IMigrationNumberSync Channel { get; private set; }
 
@@ -14,7 +22,7 @@ namespace migratorUtils.Console
         {
             var url = ServiceUrl();
 
-            var context = new InstanceContext(new MigrationNumberSyncService());
+            var context = new InstanceContext(_migrationNumberSync);
             var binding = new NetPeerTcpBinding();
             binding.Security.Mode = SecurityMode.None;
             binding.Resolver.Mode = PeerResolverMode.Pnrp;
