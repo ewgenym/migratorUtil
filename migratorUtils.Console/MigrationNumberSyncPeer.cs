@@ -2,7 +2,6 @@
 using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.PeerResolvers;
-using migratorUtils.Console.Infrastructure;
 
 namespace migratorUtils.Console
 {
@@ -15,7 +14,6 @@ namespace migratorUtils.Console
             _migrationNumberSync = migrationNumberSync;
         }
 
-        private const bool _remoteOnlyMessages = false;
         public IMigrationNumberSync Channel { get; private set; }
 
         public void Start(int port)
@@ -34,10 +32,7 @@ namespace migratorUtils.Console
 
             var proxy = channelFactory.CreateChannel();
 
-            if (_remoteOnlyMessages)
-            {
-                SetupRemoteOnlyPropogationFilter(((IClientChannel)proxy));
-            }
+            SetupRemoteOnlyPropogationFilter(((IClientChannel) proxy));
 
             ((IClientChannel)proxy).Open();
 

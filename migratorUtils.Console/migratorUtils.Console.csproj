@@ -49,8 +49,13 @@
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Events\IEventHandler.cs" />
     <Compile Include="Events\IEventPublisher.cs" />
+    <Compile Include="Events\JoinEvent.cs" />
     <Compile Include="Events\OccupyEvent.cs" />
+    <Compile Include="Events\ReleaseEvent.cs" />
+    <Compile Include="Events\SyncEvent.cs" />
+    <Compile Include="ICallbackChannelProvider.cs" />
     <Compile Include="IMigrationNumberSync.cs" />
+    <Compile Include="Infrastructure\CallbackChannelProvider.cs" />
     <Compile Include="Infrastructure\EventPublisher.cs" />
     <Compile Include="MigrationNumberSyncService.cs" />
     <Compile Include="MigrationNumberSyncPeer.cs" />

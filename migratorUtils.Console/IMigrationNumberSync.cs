@@ -22,6 +22,11 @@ namespace migratorUtils.Console
     [MessageContract]
     public class JoinRequest
     {
+        public JoinRequest()
+        {
+            HopCount = 1;
+        }
+
         [PeerHopCount]
         public int HopCount;
     }

@@ -13,7 +13,6 @@ namespace migratorUtils.Console
         {
             while(true)
             {
-                System.Console.Write(":");
                 var cmds = System.Console.ReadLine();
                 Consolery.Run(typeof(Program), cmds.Split(' '));
             }
@@ -42,7 +41,7 @@ namespace migratorUtils.Console
                 System.Console.WriteLine("Peer is already active.");
             }
 
-            _peer = new MigrationNumberSyncPeer(new MigrationNumberSyncService(new EventPublisher()));
+            _peer = new MigrationNumberSyncPeer(new MigrationNumberSyncService(new EventPublisher(), new CallbackChannelProvider()));
             _peer.Start(port);
         }
 
@@ -50,7 +49,7 @@ namespace migratorUtils.Console
         public static void Join()
         {
             CheckPeerStarted();
-            _peer.Channel.Join(new JoinRequest {HopCount = 1});
+            _peer.Channel.Join(new JoinRequest());
         }
 
         [Action]
